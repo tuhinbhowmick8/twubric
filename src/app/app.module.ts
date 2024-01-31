@@ -1,18 +1,59 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './primary-ui/footer/footer.component';
+import { HeadbarComponent } from './primary-ui/headbar/headbar.component';
+import { SidenavComponent } from './primary-ui/sidenav/sidenav.component';
+import { PrimaryUiComponent } from './primary-ui/primary-ui.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule }   from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule} from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { SublevelMenuComponent } from './primary-ui/sidenav/sublevel-menu.component';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { Userdata } from './userdata';
+import { TestComponent } from './test/test.component';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent,
+    HeadbarComponent,
+    SidenavComponent,
+    PrimaryUiComponent,
+    SublevelMenuComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatCardModule,
+    MatButtonModule,
+    MatToolbarModule,
+    CommonModule,
+    RouterModule,
+    InMemoryWebApiModule.forRoot(Userdata),
+    HttpClientModule
+    
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
