@@ -7,36 +7,24 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent {
-  constructor(private _dataService: DataService){
+  constructor(private _dataService: DataService) {
 
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.getAllData();
-    this.getUsersData()
   }
 
   allData;
-getAllData(){
-  this._dataService.getData().subscribe(res=>{
-    this.allData= res
-    console.log(this.allData, 'test')
+  getAllData() {
+    this._dataService.getData().subscribe(res => {
+      this.allData = res
+      console.log(this.allData, 'test')
+    }
+
+    )
   }
 
-  )
-}
 
-users;
-getUsersData() {
-  // Call the service method
-  this._dataService.getUsers().subscribe(
-    (data) => {
-      this.users = data;
-    },
-    (error) => {
-      console.error('Error fetching data: ', error);
-    }
-  );
-}
 
 }

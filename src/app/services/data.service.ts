@@ -15,7 +15,5 @@ export class DataService {
   }
 
 
-  getUsers() {
-    return this._http.get('/api/users');
-  }
+ 
 }
