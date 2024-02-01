@@ -13,18 +13,16 @@ export class HeadbarComponent implements OnInit, OnDestroy {
   @Input() screenWidth = 0;
 
 
-  private routerSubscription: Subscription; 
+  private routerSubscription: Subscription;
 
   activePath: string = '';
   currentUrlEndPoint: string = ''
 
-  constructor( private router: Router) {
+  constructor(private router: Router) {
 
     this.routerSubscription = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.activePath = event.url;
-        // console.log(this.router.url);
-        // console.log(window.location.pathname);
         this.currentUrlEndPoint = window.location.pathname;
         this.makeHeaderName()
       }
@@ -35,73 +33,12 @@ export class HeadbarComponent implements OnInit, OnDestroy {
   pageTitle = ''
   makeHeaderName() {
     switch (this.currentUrlEndPoint) {
-      case '/dashboard':
-        this.pageTitle = 'Dashboard'
+      case '/home':
+        this.pageTitle = 'Home'
         break;
-      case '/history':
-        this.pageTitle = 'History'
+      case '/rubrics':
+        this.pageTitle = 'Rubrics'
         break;
-      case '/internaldatabase':
-        this.pageTitle = 'Internal Database'
-        break;
-      case '/call-detail':
-        this.pageTitle = 'Call Details'
-        break;
-      case '/managerole':
-        this.pageTitle = 'User Management'
-        break;
-      case '/managerole/create-areas':
-        this.pageTitle = 'Create Areas'
-        break;
-      case '/managerole/create-user-roles':
-        this.pageTitle = 'Create User Roles'
-        break;
-      case '/managerole/create-permission':
-        this.pageTitle = 'Create Permissions'
-        break;
-      case '/candidate-status':
-        this.pageTitle = 'Candidate Status'
-        break;
-      case '/candidate-status/add-candidate':
-        this.pageTitle = 'Add Candidates'
-        break;
-      case '/candidate-status/build-status-relation':
-        this.pageTitle = 'Build Status Relation'
-        break;
-      case '/myjob':
-        this.pageTitle = 'My Jobs'
-        break;
-      case '/new-job':
-        this.pageTitle = 'New Jobs'
-        break;
-      case '/call_detail_report':
-        this.pageTitle = 'Candidte Call Reports'
-        break;
-      case '/recent-activity':
-        this.pageTitle = 'Recent Activity'
-        break;
-      case '/billing-detail':
-        this.pageTitle = 'Billing Activity'
-        break;
-      case '/billing-detail':
-        this.pageTitle = 'Billing Activity'
-        break;
-      case '/department':
-        this.pageTitle = 'Departments'
-        break;
-      case '/agency':
-        this.pageTitle = 'Agencies'
-        break;
-      case '/tracker':
-        this.pageTitle = 'Tracker Fields'
-        break;
-      case '/new-trackers':
-        this.pageTitle = 'Add New Tracker'
-        break;
-      case '/user-profile':
-        this.pageTitle = 'Profile'
-        break;
-
       default:
         this.pageTitle = ''
         break;
@@ -133,21 +70,9 @@ export class HeadbarComponent implements OnInit, OnDestroy {
 
 
 
-  iscomputerMenu() {
-    if (window.innerWidth < 991) {
-      return false;
-    }
-    return true;
-  }
-
-  
-
-  openmodal(modalname) {
 
 
-    // $(modalname).appendTo('body').modal('show');
 
-  }
 
 
 }

@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FooterComponent } from './primary-ui/footer/footer.component';
 import { HeadbarComponent } from './primary-ui/headbar/headbar.component';
 import { SidenavComponent } from './primary-ui/sidenav/sidenav.component';
 import { PrimaryUiComponent } from './primary-ui/primary-ui.component';
@@ -20,7 +19,6 @@ import { RouterModule } from '@angular/router';
 import { SublevelMenuComponent } from './primary-ui/sidenav/sublevel-menu.component';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { Userdata } from './json-data/json-data';
-import { TestComponent } from './test/test.component';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -28,12 +26,10 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
     HeadbarComponent,
     SidenavComponent,
     PrimaryUiComponent,
     SublevelMenuComponent,
-    TestComponent,
   ],
   imports: [
     BrowserModule,

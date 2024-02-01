@@ -3,14 +3,14 @@ import { INavbarData } from "./helper";
 
 export const navbarData: INavbarData[] = [
   {
-    routeLink: 'dashboard',
-    icon: 'fa-solid fa-gauge',  
-    label: 'Dashboard'
+    routeLink: 'home',
+    icon: 'fa-solid fa-house',  
+    label: 'Home'
   },
   {
-    routeLink: 'history',
-    icon: 'fa-regular fa-clock',  
-    label: 'History'
+    routeLink: 'rubrics',
+    icon: 'fa-solid fa-earth-americas',  
+    label: 'Rubrics'
   },
 
 ];
