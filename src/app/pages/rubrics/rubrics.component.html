@@ -1,6 +1,78 @@
 <div class="container">
 
+    <mat-form-field>
+      <input matInput [matDatepicker]="fromPicker" placeholder="From Date" (dateChange)="handleFromDateChange($event)">
+      <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+      <mat-datepicker #fromPicker></mat-datepicker>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput [matDatepicker]="toPicker" placeholder="To Date" (dateChange)="handleToDateChange($event)">
+      <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+      <mat-datepicker #toPicker></mat-datepicker>
+    </mat-form-field>
+  
+    <button mat-button (click)="applyDateFilter()">Filter</button>
+  
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <ng-container matColumnDef="uid">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>UID</th>
+        <td mat-cell *matCellDef="let user">{{ user.uid }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Username</th>
+        <td mat-cell *matCellDef="let user">{{ user.username }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef>Image</th>
+        <td mat-cell *matCellDef="let user">
+          <img [src]="user.image" alt="User Image" style="width: 100px; height: 100px;">
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="fullname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Full Name</th>
+        <td mat-cell *matCellDef="let user">{{ user.fullname }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Twubric Total</th>
+        <td mat-cell *matCellDef="let user">{{ user.total }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="chirpiness">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="chirpiness">Chirpiness</th>
+        <td mat-cell *matCellDef="let user">{{ user.chirpiness }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="friends">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="friends">Friends</th>
+        <td mat-cell *matCellDef="let user">{{ user.friends }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="influence">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="influence">Influence</th>
+        <td mat-cell *matCellDef="let user">{{ user.influence }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="join_date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="join_date">Join Date</th>
+        <td mat-cell *matCellDef="let user">{{ user.join_date | date }}</td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
+  
+  </div>
+  
 
-    
 
-</div>
+
+
+  
