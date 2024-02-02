@@ -60,4 +60,18 @@ export class RubricsComponent implements OnInit {
   handleToDateChange(event: MatDatepickerInputEvent<Date>) {
     this.toFilterDate = event.value;
   }
+
+
+
+
+//   applyDateFilter() {
+//     if (this.fromFilterDate && this.toFilterDate) {
+//       this.setarray = this.setarray.filter((item: any) =>      
+//       new Date(item.join_date * 1000) >= this.fromFilterDate && new Date(item.join_date * 1000) <= this.toFilterDate
+// );
+// console.log(this.setarray)
+// this.dataSource = new MatTableDataSource<any>(this.setarray);
+// console.log(this.dataSource)
+//     }
+//   }
 }
