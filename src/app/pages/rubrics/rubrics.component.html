@@ -14,6 +14,7 @@
   
     <button mat-button (click)="applyDateFilter()">Filter</button>
   
+
     <table mat-table [dataSource]="dataSource" matSort>
   
       <ng-container matColumnDef="uid">
@@ -59,7 +60,7 @@
       </ng-container>
   
       <ng-container matColumnDef="join_date">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header="join_date">Join Date</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="join_date">Joined Date</th>
         <td mat-cell *matCellDef="let user">{{ user.join_date | date }}</td>
       </ng-container>
   

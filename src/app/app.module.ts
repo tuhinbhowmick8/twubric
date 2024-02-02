@@ -16,7 +16,6 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { SublevelMenuComponent } from './primary-ui/sidenav/sublevel-menu.component';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { Userdata } from './json-data/json-data';
 import { HttpClientModule } from '@angular/common/http';
@@ -29,7 +28,6 @@ import { HttpClientModule } from '@angular/common/http';
     HeadbarComponent,
     SidenavComponent,
     PrimaryUiComponent,
-    SublevelMenuComponent,
   ],
   imports: [
     BrowserModule,

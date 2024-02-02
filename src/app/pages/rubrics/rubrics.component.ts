@@ -29,15 +29,15 @@ export class RubricsComponent implements OnInit {
   getAllData() {
     this._dataService.getData().subscribe(res => {
       this.allUsersData = res;
-      const transformedArray = this.allUsersData.map(item => {
+      const requiredUsersData = this.allUsersData.map(item => {
         return {
           ...item,
           ...item.twubric, 
         };
       });
-      this.dataSource = new MatTableDataSource<any>(transformedArray);
+      this.dataSource = new MatTableDataSource<any>(requiredUsersData);
       this.dataSource.sort = this.sort;
-      console.log(transformedArray, 'alldata');
+      console.log(requiredUsersData, 'requiredUsersData');
     });
   }
 
